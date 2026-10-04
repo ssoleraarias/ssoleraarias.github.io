@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sofía Solera | Project & Marketing Production Manager</title>
+<meta name="description" content="Project and marketing production manager building calm, predictable creative workflows and practical AI tools with Claude. Remote, working across time zones.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23731C0F'/%3E%3Ctext x='32' y='45' font-size='38' text-anchor='middle' fill='white' font-family='Georgia,serif'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F7F7F6; --ink:#1C1B1F; --muted:#5E5C63; --line:#DAD8DC;
+  --accent:#731C0F; --tint:#EDE4E1; --surface:#FFFFFF;
+  --serif:'Playfair Display',Georgia,serif; --sans:'DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--paper:#171518;--ink:#F2EFEF;--muted:#A9A5AC;--line:#34303A;--accent:#E08A78;--tint:#2A2023;--surface:#1F1C21}
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font:400 1.0625rem/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 clamp(20px,5vw,48px)}
+header{display:flex;justify-content:space-between;align-items:center;padding:28px 0}
+.logo{font:700 1.15rem var(--serif);text-decoration:none}
+nav{display:flex;gap:28px;font-size:.95rem}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.1;letter-spacing:-.01em}
+h1{font-size:clamp(2.5rem,6.4vw,4.75rem);max-width:15ch;margin-top:clamp(36px,7vw,84px)}
+.lede{max-width:56ch;margin-top:28px;font-size:1.2rem;color:var(--muted)}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.btn{display:inline-block;padding:13px 24px;border-radius:999px;font-weight:500;text-decoration:none;border:1.5px solid var(--ink)}
+.btn.main{background:var(--ink);color:var(--paper)}
+.btn:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:clamp(24px,5vw,64px);align-items:center}
+.hero h1{font-size:clamp(2.4rem,5.2vw,4.3rem)}
+.hello{font-weight:700;color:var(--ink)}
+.portrait{border-radius:999px 999px 24px 24px;overflow:hidden;aspect-ratio:4/5;background:var(--tint);margin-top:clamp(36px,7vw,84px)}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 35%;display:block}
+.stats{margin-top:clamp(48px,8vw,88px);display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink);border-bottom:1px solid var(--line)}
+.stat{padding:28px clamp(0px,2vw,28px) 28px 0}
+.stat+.stat{padding-left:clamp(16px,3vw,36px);border-left:1px solid var(--line)}
+.stat b{display:block;font:700 clamp(2.4rem,5.5vw,4rem)/1 var(--serif);color:var(--accent)}
+.stat span{display:block;margin-top:10px;color:var(--muted);max-width:24ch;font-size:.98rem;line-height:1.45}
+.wide{margin-top:36px;border-radius:20px;overflow:hidden;aspect-ratio:16/7;background:var(--tint)}
+.wide img{width:100%;height:100%;object-fit:cover;display:block}
+.quote{text-align:center}
+.quote blockquote{font:700 clamp(2rem,5.2vw,3.8rem)/1.12 var(--serif);max-width:17ch;margin:0 auto}
+.quote p{margin:22px auto 0;max-width:46ch;color:var(--muted);font-size:1.15rem}
+.pics{margin-top:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.pics figure{margin:0}
+.pics img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:16px;display:block;background:var(--tint)}
+.pics figcaption{margin-top:10px;color:var(--muted);font-size:.92rem;text-align:left}
+
+section{padding:clamp(64px,10vw,120px) 0 0}
+h2{font-size:clamp(1.9rem,4vw,2.9rem);max-width:20ch}
+.skills{margin-top:44px;border-top:1px solid var(--line)}
+.skill{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px 48px;padding:34px 0;border-bottom:1px solid var(--line)}
+.skill h3{font-size:1.7rem}
+.skill p{color:var(--muted);max-width:58ch}
+.skill b{color:var(--ink);font-weight:500}
+
+.case{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px 48px;padding:40px 0;border-top:1px solid var(--line)}
+.case:last-of-type{border-bottom:1px solid var(--line)}
+.big{font:700 clamp(2.2rem,5vw,3.4rem)/1 var(--serif);color:var(--accent);margin-bottom:10px}
+.case h3{font-size:1.3rem;font-family:var(--sans);font-weight:700;letter-spacing:0}
+.case dl{display:grid;grid-template-columns:7.5rem 1fr;gap:10px 16px}
+.case dt{font-weight:700}
+.case dd{color:var(--muted)}
+.cmp{margin-top:22px;display:grid;gap:8px;max-width:360px;font-size:.88rem}
+.cmp div{display:flex;align-items:center;gap:12px}
+.cmp em{font-style:normal;width:4.2rem;color:var(--muted)}
+.cmp s{display:block;height:14px;border-radius:4px;text-decoration:none}
+
+.tools{margin-top:36px;display:flex;flex-wrap:wrap;gap:10px}
+.tools span{padding:8px 16px;border:1px solid var(--line);border-radius:999px;background:var(--surface);font-size:.95rem}
+.tools span.ai{border-color:var(--accent);color:var(--accent)}
+.tag-note{margin-top:14px;color:var(--muted);font-size:.9rem}
+
+.contact{margin-top:clamp(64px,10vw,120px);background:var(--ink);color:var(--paper);border-radius:24px;padding:clamp(32px,6vw,72px)}
+.contact h2{max-width:16ch}
+.contact p{margin-top:20px;max-width:52ch;opacity:.8}
+.contact .btn{border-color:var(--paper);color:var(--paper)}
+.contact .btn.main{background:var(--paper);color:var(--ink)}
+.contact .btn:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+footer{padding:36px 0 48px;color:var(--muted);font-size:.9rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+@media(max-width:760px){
+  nav{gap:18px}
+  .hero{grid-template-columns:1fr}.portrait{max-width:380px;margin-top:8px}
+  .stats{grid-template-columns:1fr}.stat+.stat{padding-left:0;border-left:0;border-top:1px solid var(--line)}
+  .skill,.case{grid-template-columns:1fr}
+  .case dl{grid-template-columns:1fr;gap:2px}.case dd{margin-bottom:10px}
+}
+@media(prefers-reduced-motion:reduce){.x{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="logo" href="#top">Sofía Solera</a>
+    <nav aria-label="Main"><a href="#skills">What I do</a><a href="#work">Work</a><a href="#contact">Contact</a></nav>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <div>
+        <h1>Creative production that runs on a system, not on heroics.</h1>
+        <p class="lede"><span class="hello">Hola, I'm Sofía.</span> I'm a project and marketing production manager who loves building calm, well-run creative teams. I design the workflows that help them ship more with less chaos, and I build the AI tools that take the busywork off their plates.</p>
+        <div class="cta">
+          <a class="btn main" href="mailto:ssoleraarias@gmail.com">Email me</a>
+          <a class="btn" href="Sofia_Solera_CV_EN.pdf">Download CV</a>
+        </div>
+      </div>
+      <figure class="portrait" style="margin-bottom:0"><img src="photos/sofia.jpg" alt="Portrait of Sofía smiling, wearing a cream blouse and gold jewelry" width="1000" height="1000"></figure>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>7+</b><span>years leading creative and marketing production</span></div>
+      <div class="stat"><b>~160</b><span>content pieces a month across 7 client accounts</span></div>
+      <div class="stat"><b>−25%</b><span>production hours after redesigning the workflow</span></div>
+    </div>
+  </main>
+
+  <section id="skills" aria-labelledby="s-h">
+    <h2 id="s-h">What I bring to a team right now</h2>
+    <div class="skills">
+      <div class="skill"><h3>Production systems</h3>
+        <p>Staggered calendars, clear handoffs and built-in buffers. A team of six ships about <b>160 content pieces a month across 7 client accounts</b> without fire drills, and production hours dropped 25%.</p></div>
+      <div class="skill"><h3>AI workflows</h3>
+        <p>I build <b>Claude Skills</b> that take over recurring work: weekly hour tracking, transcript analysis, pulling creative concepts with timestamps. I use Claude Code and Claude Cowork to automate the rest, and make them usable across the whole team.</p></div>
+      <div class="skill"><h3>Leading people</h3>
+        <p>I love leading. I'm a people person, and I genuinely enjoy being a team's manager: knowing what each person does best, keeping priorities clear, and making the work feel good to do.</p></div>
+    </div>
+    <figure class="wide" style="margin-bottom:0"><img src="photos/working.jpg" alt="Sofía at work" onerror="this.closest('figure').remove()"></figure>
+  </section>
+
+  <section id="work" aria-labelledby="w-h">
+    <h2 id="w-h">Two things I built recently</h2>
+    <div style="margin-top:44px">
+      <article class="case">
+        <div><div class="big">−25%</div><h3>Production hours, with a two-wave system</h3></div>
+        <dl>
+          <dt>Problem</dt><dd>Seven client accounts and about 160 pieces a month needed a predictable production rhythm.</dd>
+          <dt>What I did</dt><dd>Split accounts into staggered waves, defined every handoff, set copy to arrive one day before video, and added a one-week publishing buffer.</dd>
+          <dt>Result</dt><dd>25% fewer production hours across the team.</dd>
+        </dl>
+      </article>
+      <article class="case">
+        <div><div class="big">4 h to under 2</div><h3>Content Session Analyzer</h3>
+          <div class="cmp" aria-label="Analysis time before: up to 4 hours. After: 1.5 to 2 hours.">
+            <div><em>Before</em><s style="width:100%;background:var(--ink)"></s></div>
+            <div><em>After</em><s style="width:48%;background:var(--accent)"></s></div>
+          </div></div>
+        <dl>
+          <dt>Problem</dt><dd>Analyzing a content-session transcript by hand took up to four hours.</dd>
+          <dt>What I did</dt><dd>Built a Claude Skill on my own that turns Happy Scribe transcripts into structured analysis mapped to 11 content pillars.</dd>
+          <dt>Result</dt><dd>About 1.5 to 2 hours per session, and a workflow the full team now uses.</dd>
+        </dl>
+      </article>
+    </div>
+  </section>
+
+  <section class="quote" aria-labelledby="q-h">
+    <blockquote id="q-h">“8 to 5 working girls have hobbies.”</blockquote>
+    <p>Mine: murder mystery novels, pilates, and festivals and concerts whenever I can get to one.</p>
+    <div class="pics">
+      <figure><img src="photos/books.jpg" alt="" onerror="this.closest('figure').remove()"><figcaption>Murder mystery novels</figcaption></figure>
+      <figure><img src="photos/pilates.jpg" alt="" onerror="this.closest('figure').remove()"><figcaption>Pilates</figcaption></figure>
+      <figure><img src="photos/festivals.jpg" alt="" onerror="this.closest('figure').remove()"><figcaption>Festivals and concerts</figcaption></figure>
+    </div>
+  </section>
+
+  <section aria-labelledby="t-h">
+    <h2 id="t-h">What I work with</h2>
+    <div class="tools">
+      <span class="ai">Claude</span><span class="ai">Claude Code</span><span class="ai">Claude Cowork</span><span class="ai">Claude Skills</span><span class="ai">ChatGPT</span>
+      <span>Asana</span><span>Harvest</span><span>Notion</span><span>Box</span><span>Roam</span><span>Google Workspace</span><span>Microsoft 365</span><span>Agile / Scrum</span>
+    </div>
+    <p class="tag-note">Spanish (native), English (C2), Italian (intermediate).</p>
+  </section>
+
+  <section id="contact" class="contact" aria-labelledby="c-h" style="padding-top:clamp(32px,6vw,72px)">
+    <h2 id="c-h">Looking for someone to run your production?</h2>
+    <p>I'm open to remote Project Manager and Marketing Manager roles with U.S. and international teams. I work remotely, across time zones, and overlap with U.S., U.K. and European working hours.</p>
+    <div class="cta">
+      <a class="btn main" href="mailto:ssoleraarias@gmail.com">ssoleraarias@gmail.com</a>
+      <a class="btn" href="https://linkedin.com/in/sofiasolera">LinkedIn</a>
+    </div>
+  </section>
+
+  <footer><span>Sofía Solera</span><span>Remote, across time zones</span></footer>
+</div>
+</body>
+</html>
