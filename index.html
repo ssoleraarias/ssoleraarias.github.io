@@ -91,7 +91,20 @@ h2{font-size:clamp(1.9rem,4vw,2.9rem);max-width:20ch}
 .contact .btn:hover{background:var(--accent);border-color:var(--accent);color:#fff}
 footer{padding:36px 0 48px;color:var(--muted);font-size:.9rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 
+.lang{display:flex;border:1.5px solid var(--line);border-radius:999px;padding:3px;margin-left:20px}
+.lang button{font:500 .8rem var(--sans);border:0;background:none;color:var(--muted);padding:5px 12px;border-radius:999px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+header nav{margin-left:auto}
+.main-tools{margin-top:36px;display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.tool{display:flex;gap:20px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:24px}
+.tool svg{flex:none;border-radius:16px}
+.tool h3{font-size:1.5rem}
+.tool p{margin-top:6px;color:var(--muted);font-size:.98rem;line-height:1.55}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.chips span{font-size:.8rem;padding:3px 10px;border-radius:999px;background:var(--tint);color:var(--accent);font-weight:500}
+.main-tools+.tools{margin-top:16px}
 @media(max-width:760px){
+  .main-tools{grid-template-columns:1fr}.lang{margin-left:12px}
   nav{gap:18px}
   .hero{grid-template-columns:1fr}.portrait{max-width:380px;margin-top:8px}
   .stats{grid-template-columns:1fr}.stat+.stat{padding-left:0;border-left:0;border-top:1px solid var(--line)}
@@ -105,96 +118,124 @@ footer{padding:36px 0 48px;color:var(--muted);font-size:.9rem;display:flex;justi
 <div class="wrap">
   <header>
     <a class="logo" href="#top">Sofía Solera</a>
-    <nav aria-label="Main"><a href="#skills">What I do</a><a href="#work">Work</a><a href="#contact">Contact</a></nav>
+    <nav aria-label="Main"><a data-t href="#skills">What I do</a><a data-t href="#work">Work</a><a data-t href="#contact">Contact</a></nav>
+    <div class="lang" role="group" aria-label="Language"><button type="button" data-l="en" aria-pressed="true">EN</button><button type="button" data-l="es" aria-pressed="false">ES</button></div>
   </header>
 
   <main id="top">
     <div class="hero">
       <div>
-        <h1>Creative production that runs on a system, not on heroics.</h1>
-        <p class="lede"><span class="hello">Hola, I'm Sofía.</span> I'm a project and marketing production manager who loves building calm, well-run creative teams. I design the workflows that help them ship more with less chaos, and I build the AI tools that take the busywork off their plates.</p>
+        <h1 data-t>Creative production that runs on a system, not on heroics.</h1>
+        <p data-t class="lede"><span class="hello">Hola, I'm Sofía.</span> I'm a project and marketing production manager who loves building calm, well-run creative teams. I design the workflows that help them ship more with less chaos, and I build the AI tools that take the busywork off their plates.</p>
         <div class="cta">
-          <a class="btn main" href="mailto:ssoleraarias@gmail.com">Email me</a>
-          <a class="btn" href="Sofia_Solera_CV_EN.pdf">Download CV</a>
+          <a class="btn main" data-t href="mailto:ssoleraarias@gmail.com">Email me</a>
+          <a class="btn" id="cv" data-t href="Sofia_Solera_CV_EN.pdf">Download CV</a>
         </div>
       </div>
-      <figure class="portrait" style="margin-bottom:0"><img src="./photos%3A/sofia.jpg" alt="Portrait of Sofía smiling, wearing a cream blouse and gold jewelry" width="1000" height="1000"></figure>
+      <figure class="portrait" style="margin-bottom:0"><img id="pimg" src="./photos%3A/sofia.jpg" alt="Portrait of Sofía smiling, wearing a cream blouse and gold jewelry" width="1000" height="1000"></figure>
     </div>
     <div class="stats">
-      <div class="stat"><b>7+</b><span>years leading creative and marketing production</span></div>
-      <div class="stat"><b>~160</b><span>content pieces a month across 7 client accounts</span></div>
-      <div class="stat"><b>−25%</b><span>production hours after redesigning the workflow</span></div>
+      <div class="stat"><b>7+</b><span data-t>years leading creative and marketing production</span></div>
+      <div class="stat"><b>~160</b><span data-t>content pieces a month across 7 client accounts</span></div>
+      <div class="stat"><b>−25%</b><span data-t>production hours after redesigning the workflow</span></div>
     </div>
   </main>
 
   <section id="skills" aria-labelledby="s-h">
-    <h2 id="s-h">What I bring to a team right now</h2>
+    <h2 data-t id="s-h">What I bring to a team right now</h2>
     <div class="skills">
-      <div class="skill"><h3>Production systems</h3>
-        <p>Staggered calendars, clear handoffs and built-in buffers. A team of six ships about <b>160 content pieces a month across 7 client accounts</b> without fire drills, and production hours dropped 25%.</p></div>
-      <div class="skill"><h3>AI workflows</h3>
-        <p>I build <b>Claude Skills</b> that take over recurring work: weekly hour tracking, transcript analysis, pulling creative concepts with timestamps. I use Claude Code and Claude Cowork to automate the rest, and make them usable across the whole team.</p></div>
-      <div class="skill"><h3>Leading people</h3>
-        <p>I love leading. I'm a people person, and I genuinely enjoy being a team's manager: knowing what each person does best, keeping priorities clear, and making the work feel good to do.</p></div>
+      <div class="skill"><h3 data-t>Production systems</h3>
+        <p data-t>Staggered calendars, clear handoffs and built-in buffers. A team of six ships about <b>160 content pieces a month across 7 client accounts</b> without fire drills, and production hours dropped 25%.</p></div>
+      <div class="skill"><h3 data-t>AI workflows</h3>
+        <p data-t>I build <b>Claude Skills</b> that take over recurring work: weekly hour tracking, transcript analysis, pulling creative concepts with timestamps. I use Claude Code and Claude Cowork to automate the rest, and make them usable across the whole team.</p></div>
+      <div class="skill"><h3 data-t>Leading people</h3>
+        <p data-t>I love leading. I'm a people person, and I genuinely enjoy being a team's manager: knowing what each person does best, keeping priorities clear, and making the work feel good to do.</p></div>
     </div>
     <figure class="wide" style="margin-bottom:0"><img src="./photos%3A/working.JPG" alt="Sofía at work" onerror="this.closest('figure').remove()"></figure>
   </section>
 
   <section id="work" aria-labelledby="w-h">
-    <h2 id="w-h">Two things I built recently</h2>
+    <h2 data-t id="w-h">Two things I built recently</h2>
     <div style="margin-top:44px">
       <article class="case">
-        <div><div class="big">−25%</div><h3>Production hours, with a two-wave system</h3></div>
+        <div><div class="big" data-t>−25%</div><h3 data-t>Production hours, with a two-wave system</h3></div>
         <dl>
-          <dt>Problem</dt><dd>Seven client accounts and about 160 pieces a month needed a predictable production rhythm.</dd>
-          <dt>What I did</dt><dd>Split accounts into staggered waves, defined every handoff, set copy to arrive one day before video, and added a one-week publishing buffer.</dd>
-          <dt>Result</dt><dd>25% fewer production hours across the team.</dd>
+          <dt data-t>Problem</dt><dd data-t>Seven client accounts and about 160 pieces a month needed a predictable production rhythm.</dd>
+          <dt data-t>What I did</dt><dd data-t>Split accounts into staggered waves, defined every handoff, set copy to arrive one day before video, and added a one-week publishing buffer.</dd>
+          <dt data-t>Result</dt><dd data-t>25% fewer production hours across the team.</dd>
         </dl>
       </article>
       <article class="case">
-        <div><div class="big">4 h to under 2</div><h3>Content Session Analyzer</h3>
-          <div class="cmp" aria-label="Analysis time before: up to 4 hours. After: 1.5 to 2 hours.">
-            <div><em>Before</em><s style="width:100%;background:var(--ink)"></s></div>
-            <div><em>After</em><s style="width:48%;background:var(--accent)"></s></div>
+        <div><div class="big" data-t>4 h to under 2</div><h3 data-t>Content Session Analyzer</h3>
+          <div class="cmp" id="cmp" aria-label="Analysis time before: up to 4 hours. After: 1.5 to 2 hours.">
+            <div><em data-t>Before</em><s style="width:100%;background:var(--ink)"></s></div>
+            <div><em data-t>After</em><s style="width:48%;background:var(--accent)"></s></div>
           </div></div>
         <dl>
-          <dt>Problem</dt><dd>Analyzing a content-session transcript by hand took up to four hours.</dd>
-          <dt>What I did</dt><dd>Built a Claude Skill on my own that turns Happy Scribe transcripts into structured analysis mapped to 11 content pillars.</dd>
-          <dt>Result</dt><dd>About 1.5 to 2 hours per session, and a workflow the full team now uses.</dd>
+          <dt data-t>Problem</dt><dd data-t>Analyzing a content-session transcript by hand took up to four hours.</dd>
+          <dt data-t>What I did</dt><dd data-t>Built a Claude Skill on my own that turns Happy Scribe transcripts into structured analysis mapped to 11 content pillars.</dd>
+          <dt data-t>Result</dt><dd data-t>About 1.5 to 2 hours per session, and a workflow the full team now uses.</dd>
         </dl>
       </article>
     </div>
   </section>
 
   <section class="quote" aria-labelledby="q-h">
-    <blockquote id="q-h">“8 to 5 working girls have hobbies.”</blockquote>
-    <p>Mine: murder mystery novels, pilates, and festivals and concerts whenever I can get to one.</p>
+    <blockquote data-t id="q-h">“8 to 5 working girls have hobbies.”</blockquote>
+    <p data-t>Mine: murder mystery novels, pilates, and festivals and concerts whenever I can get to one.</p>
     <div class="pics">
-      <figure><img src="./photos%3A/books.JPG" alt="" onerror="this.closest('figure').remove()"><figcaption>Murder mystery novels</figcaption></figure>
-      <figure><img src="./photos%3A/pilates.JPG" alt="" onerror="this.closest('figure').remove()"><figcaption>Pilates</figcaption></figure>
-      <figure><img src="./photos%3A/festivals.JPG" alt="" onerror="this.closest('figure').remove()"><figcaption>Festivals and concerts</figcaption></figure>
+      <figure><img src="./photos%3A/books.JPG" alt="" onerror="this.closest('figure').remove()"><figcaption data-t>Murder mystery novels</figcaption></figure>
+      <figure><img src="./photos%3A/pilates.JPG" alt="" onerror="this.closest('figure').remove()"><figcaption data-t>Pilates</figcaption></figure>
+      <figure><img src="./photos%3A/festivals.JPG" alt="" onerror="this.closest('figure').remove()"><figcaption data-t>Festivals and concerts</figcaption></figure>
     </div>
   </section>
 
   <section aria-labelledby="t-h">
-    <h2 id="t-h">What I work with</h2>
-    <div class="tools">
-      <span class="ai">Claude</span><span class="ai">Claude Code</span><span class="ai">Claude Cowork</span><span class="ai">Claude Skills</span><span class="ai">ChatGPT</span>
-      <span>Asana</span><span>Harvest</span><span>Notion</span><span>Box</span><span>Roam</span><span>Google Workspace</span><span>Microsoft 365</span><span>Agile / Scrum</span>
+    <h2 data-t id="t-h">What I work with</h2>
+    <div class="main-tools">
+      <article class="tool"><svg viewBox="0 0 64 64" width="64" height="64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#D97757"/><g stroke="#fff" stroke-width="5" stroke-linecap="round"><path d="M32 32V12"/><path d="M32 32l13-15"/><path d="M32 32h19"/><path d="M32 32l12 14"/><path d="M32 32v20"/><path d="M32 32L20 47"/><path d="M32 32H13"/><path d="M32 32L19 18"/></g></svg><div><h3>Claude</h3><p data-t>My everyday AI partner for project management and workflow design: Skills, Claude Code and Claude Cowork that automate recurring production work.</p><div class="chips"><span>Claude Code</span><span>Cowork</span><span>Skills</span></div></div></article>
+      <article class="tool"><svg viewBox="0 0 64 64" width="64" height="64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#F06A6A"/><circle cx="32" cy="22" r="8" fill="#fff"/><circle cx="21" cy="42" r="8" fill="#fff"/><circle cx="43" cy="42" r="8" fill="#fff"/></svg><div><h3>Asana</h3><p data-t>Where I plan priorities, workload and handoffs so the whole team can see what comes next.</p></div></article>
     </div>
-    <p class="tag-note">Spanish (native), English (C2), Italian (intermediate).</p>
+    <div class="tools"><span>ChatGPT</span><span>Harvest</span><span>Notion</span><span>Box</span><span>Roam</span><span>Google Workspace</span><span>Microsoft 365</span><span>Agile / Scrum</span></div>
+    <p data-t class="tag-note">Spanish (native), English (C2), Italian (intermediate).</p>
   </section>
 
   <section id="contact" class="contact" aria-labelledby="c-h" style="padding-top:clamp(32px,6vw,72px)">
-    <h2 id="c-h">Looking for someone to run your production?</h2>
-    <p>I'm open to remote Project Manager and Marketing Manager roles with U.S. and international teams. I work remotely, across time zones, and overlap with U.S., U.K. and European working hours.</p>
+    <h2 data-t id="c-h">Looking for someone to run your production?</h2>
+    <p data-t>I'm open to remote Project Manager and Marketing Manager roles with U.S. and international teams. I work remotely, across time zones, and overlap with U.S., U.K. and European working hours.</p>
     <div class="cta">
       <a class="btn main" href="mailto:ssoleraarias@gmail.com">ssoleraarias@gmail.com</a>
       <a class="btn" href="https://linkedin.com/in/sofiasolera">LinkedIn</a>
     </div>
   </section>
 
-  <footer><span>Sofía Solera</span><span>Remote, across time zones</span></footer>
+  <footer><span>Sofía Solera</span><span data-t>Remote, across time zones</span></footer>
 </div>
+<script>
+(function(){
+  var ES={"What I do": "Qué hago", "Work": "Proyectos", "Contact": "Contacto", "Creative production that runs on a system, not on heroics.": "Producción creativa que funciona con un sistema, no con heroicidades.", "<span class=\"hello\">Hola, I'm Sofía.</span> I'm a project and marketing production manager who loves building calm, well-run creative teams. I design the workflows that help them ship more with less chaos, and I build the AI tools that take the busywork off their plates.": "<span class=\"hello\">Hola, soy Sofía.</span> Soy project manager y responsable de producción de marketing, y me encanta armar equipos creativos tranquilos y bien organizados. Diseño los flujos de trabajo que les permiten entregar más con menos caos, y construyo las herramientas de IA que les quitan el trabajo repetitivo de encima.", "Email me": "Escríbeme", "Download CV": "Descargar CV", "years leading creative and marketing production": "años liderando producción creativa y de marketing", "content pieces a month across 7 client accounts": "piezas de contenido al mes en 7 cuentas de clientes", "production hours after redesigning the workflow": "horas de producción tras rediseñar el flujo de trabajo", "What I bring to a team right now": "Lo que aporto a un equipo hoy", "Production systems": "Sistemas de producción", "Staggered calendars, clear handoffs and built-in buffers. A team of six ships about <b>160 content pieces a month across 7 client accounts</b> without fire drills, and production hours dropped 25%.": "Calendarios escalonados, traspasos claros y márgenes de seguridad integrados. Un equipo de seis entrega unas <b>160 piezas de contenido al mes en 7 cuentas de clientes</b> sin urgencias de último minuto, y las horas de producción bajaron un 25 %.", "AI workflows": "Flujos de trabajo con IA", "I build <b>Claude Skills</b> that take over recurring work: weekly hour tracking, transcript analysis, pulling creative concepts with timestamps. I use Claude Code and Claude Cowork to automate the rest, and make them usable across the whole team.": "Construyo <b>Claude Skills</b> que se encargan del trabajo recurrente: seguimiento semanal de horas, análisis de transcripciones y extracción de conceptos creativos con timestamps. Uso Claude Code y Claude Cowork para automatizar el resto, y hago que todo el equipo pueda usarlos.", "Leading people": "Liderar personas", "I love leading. I'm a people person, and I genuinely enjoy being a team's manager: knowing what each person does best, keeping priorities clear, and making the work feel good to do.": "Me encanta liderar. Soy una persona sociable y disfruto de verdad ser la manager de un equipo: saber en qué destaca cada persona, mantener las prioridades claras y lograr que el trabajo sea agradable de hacer.", "Two things I built recently": "Dos cosas que construí recientemente", "Production hours, with a two-wave system": "Horas de producción, con un sistema de dos olas", "Problem": "Problema", "What I did": "Qué hice", "Result": "Resultado", "Seven client accounts and about 160 pieces a month needed a predictable production rhythm.": "Siete cuentas de clientes y unas 160 piezas al mes necesitaban un ritmo de producción predecible.", "Split accounts into staggered waves, defined every handoff, set copy to arrive one day before video, and added a one-week publishing buffer.": "Dividí las cuentas en olas escalonadas, definí cada traspaso, hice que el copy llegara un día antes que el video y sumé un margen de publicación de una semana.", "25% fewer production hours across the team.": "25 % menos de horas de producción en todo el equipo.", "4 h to under 2": "De 4 h a menos de 2", "Before": "Antes", "After": "Después", "Analyzing a content-session transcript by hand took up to four hours.": "Analizar a mano la transcripción de una sesión de contenido tomaba hasta cuatro horas.", "Built a Claude Skill on my own that turns Happy Scribe transcripts into structured analysis mapped to 11 content pillars.": "Construí por mi cuenta un Claude Skill que convierte transcripciones de Happy Scribe en un análisis estructurado, organizado en 11 pilares de contenido.", "About 1.5 to 2 hours per session, and a workflow the full team now uses.": "Unas 1,5 a 2 horas por sesión, y un flujo que ahora usa todo el equipo.", "Mine: murder mystery novels, pilates, and festivals and concerts whenever I can get to one.": "Los míos: novelas de misterio y asesinatos, pilates, y festivales y conciertos cada vez que puedo ir a uno.", "Murder mystery novels": "Novelas de misterio", "Festivals and concerts": "Festivales y conciertos", "What I work with": "Con qué trabajo", "My everyday AI partner for project management and workflow design: Skills, Claude Code and Claude Cowork that automate recurring production work.": "Mi aliada diaria de IA para gestión de proyectos y diseño de flujos de trabajo: Skills, Claude Code y Claude Cowork que automatizan el trabajo de producción recurrente.", "Where I plan priorities, workload and handoffs so the whole team can see what comes next.": "Donde planifico prioridades, carga de trabajo y traspasos para que todo el equipo vea qué viene después.", "Spanish (native), English (C2), Italian (intermediate).": "Español (nativo), inglés (C2), italiano (intermedio).", "Looking for someone to run your production?": "¿Buscas a alguien que lidere tu producción?", "I'm open to remote Project Manager and Marketing Manager roles with U.S. and international teams. I work remotely, across time zones, and overlap with U.S., U.K. and European working hours.": "Estoy abierta a roles remotos de Project Manager y Marketing Manager con equipos de EE. UU. e internacionales. Trabajo en remoto, entre husos horarios, y coincido con los horarios laborales de EE. UU., Reino Unido y Europa.", "Remote, across time zones": "Remoto, entre husos horarios"};
+  var N=function(x){return x.replace(/\s+/g,' ').trim()},M={};
+  for(var k in ES)M[N(k)]=ES[k];
+  var els=[].slice.call(document.querySelectorAll('[data-t]'));
+  els.forEach(function(e){e._en=e.innerHTML});
+  var pimg=document.getElementById('pimg'),cmp=document.getElementById('cmp'),cv=document.getElementById('cv');
+  var alt={en:[pimg.alt,cmp.getAttribute('aria-label'),document.title,document.querySelector('meta[name=description]').content],
+           es:['Retrato de Sofía sonriendo, con una blusa color crema y joyas doradas','Tiempo de análisis antes: hasta 4 horas. Después: de 1,5 a 2 horas.','Sofía Solera | Project Manager y Responsable de Producción de Marketing','Project manager y responsable de producción de marketing que construye flujos de trabajo creativos predecibles y herramientas de IA prácticas con Claude. Remoto, entre husos horarios.']};
+  function set(l){
+    els.forEach(function(e){var v=l==='es'?M[N(e._en)]:null;e.innerHTML=v||e._en});
+    var a=alt[l];pimg.alt=a[0];cmp.setAttribute('aria-label',a[1]);document.title=a[2];
+    document.querySelector('meta[name=description]').content=a[3];
+    document.documentElement.lang=l;
+    cv.href='Sofia_Solera_CV_'+(l==='es'?'ES':'EN')+'.pdf';
+    [].forEach.call(document.querySelectorAll('.lang button'),function(b){b.setAttribute('aria-pressed',b.dataset.l===l)});
+    try{localStorage.setItem('lang',l)}catch(e){}
+  }
+  [].forEach.call(document.querySelectorAll('.lang button'),function(b){b.addEventListener('click',function(){set(b.dataset.l)})});
+  var q=new URLSearchParams(location.search).get('lang'),saved=null;
+  try{saved=localStorage.getItem('lang')}catch(e){}
+  var l=q||saved||'en';
+  if(l==='es')set('es');
+})();
+</script>
 </body>
 </html>
